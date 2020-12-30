@@ -1,0 +1,56 @@
+en:
+  PLUGIN_SHORTCODE_GALLERY_PLUSPLUS:
+
+    # Justified Gallery
+    GALLERY_SETTINGS: "Gallery Settings"
+
+    DEFAULT_ROW_HEIGHT: "Row height"
+    DEFAULT_ROW_HEIGHT_HELP: "The preferred rows height in pixel."
+
+    DEFAULT_MARGINS: "Margin size"
+    DEFAULT_MARGINS_HELP: "Decide the margins between the images in pixel"
+
+    DEFAULT_LAST_ROW: "Last row"
+    DEFAULT_LAST_ROW_HELP: "Decide to justify the last row ('justify') or not ('nojustify'), or to hide the row if it can't be justified (using 'hide'). Using 'nojustify', the last row images are aligned to the left, but they can be also aligned to the center (using 'center') or to the right (using 'right')."
+
+    DEFAULT_CAPTIONS: "Captions"
+    DEFAULT_CAPTIONS_HELP: "Decide if you want to show the captions that appears when your mouse is over the image."
+
+    DEFAULT_BORDER: "Border size"
+    DEFAULT_BORDER_HELP: "Decide the border size of the gallery. Use '-1' to set the border the same size as the margins."
+
+    # GLightbox
+    LIGHTBOX_SETTINGS: "Lightbox Settings"
+
+    DEFAULT_OPEN_EFFECT: "Open effect"
+
+    DEFAULT_CLOSE_EFFECT: "Close effect"
+
+    DEFAULT_SLIDE_EFFECT: "Slide effect"
+
+    DEFAULT_CLOSE_BUTTON: "Close button"
+    DEFAULT_CLOSE_BUTTON_HELP: "Show or hide the close button."
+
+    DEFAULT_TOUCH_NAVIGATION: "Touch navigation"
+    DEFAULT_TOUCH_NAVIGATION_HELP: "Enable or disable the touch navigation (swipe)."
+
+    DEFAULT_TOUCH_FOLLOW_AXIS: "Touch follow axis"
+    DEFAULT_TOUCH_FOLLOW_AXIS_HELP: "Image follow axis when dragging on mobile."
+
+    DEFAULT_KEYBOARD_NAVIGATION: "Keyboard navigation"
+    DEFAULT_KEYBOARD_NAVIGATION_HELP: "Enable or disable the keyboard navigation."
+
+    DEFAULT_CLOSE_ON_OUTSIDE_CLICK: "Close on outside click"
+    DEFAULT_CLOSE_ON_OUTSIDE_CLICK_HELP: "Close the lightbox when clicking outside the active slide."
+
+    DEFAULT_LOOP: "Loop"
+    DEFAULT_LOOP_HELP: "Loop slides on end."
+
+    DEFAULT_DRAGGABLE: "Draggable"
+    DEFAULT_DRAGGABLE_HELP: "Enable or disable mouse drag to go prev and next slide."
+
+    DEFAULT_DESC_ENABLED: "Show description"
+    DEFAULT_DESC_ENABLED_HELP: "The 'alt' text will be used as description."
+
+    DEFAULT_DESC_POSITION: "Description position"
+    DEFAULT_DESC_POSITION_HELP: "Position for slides description."
