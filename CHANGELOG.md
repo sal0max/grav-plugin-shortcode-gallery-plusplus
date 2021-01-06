@@ -3,6 +3,8 @@
 
 1. [](#improved)
    * Updated GLightbox to 3.0.7
+2. [](#improved)
+   * Improved image parsing
 
 # v1.0.0
 ##  12/30/2020

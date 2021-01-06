@@ -41,10 +41,16 @@ class GalleryPlusPlusShortcode extends Shortcode
             // find all images, that a gallery contains
             $content = $sc->getContent();
 
+            // check validity
+            if (str_contains($content, "<pre>"))
+                return "<p style='color: #d40000; font-weight: bold; padding: 1rem 0;'>[Shortcode Gallery++] Error:<br> 
+                        &gt; Images provided got parsed as code block.<br>
+                        &gt; Please check your markdown file and make sure the images aren't indented by tab or more than three spaces.</p>";
+
             // remove <p> tags
-            $content = preg_replace('(^\n?<p>|</p>$)', '', $content);
+            $content = preg_replace('(<p>|</p>)', '', $content);
             // split up images to arrays of img links
-            preg_match_all('|<img.*/?>|', $content, $images);
+            preg_match_all('|<img.*?/>|', $content, $images);
             // get all links
             preg_match_all('|src="(.*?)"|', $content, $links);
             // get all alt descriptions
