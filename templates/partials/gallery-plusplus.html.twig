@@ -4,8 +4,9 @@
 {% endblock %}
 
 {% block javascripts %}
-    {% do assets.add('plugin://shortcode-gallery-plusplus/vendor/glightbox/glightbox.min.js') %}
-    {% do assets.add('plugin://shortcode-gallery-plusplus/vendor/justified-gallery/jquery.justifiedGallery.min.js') %}
+    {% do assets.addJs('jquery', 101) %}
+    {% do assets.addJs('plugin://shortcode-gallery-plusplus/vendor/glightbox/glightbox.min.js') %}
+    {% do assets.addJs('plugin://shortcode-gallery-plusplus/vendor/justified-gallery/jquery.justifiedGallery.min.js') %}
 {% endblock %}
 
 {# a random id for each gallery #}

@@ -1,3 +1,9 @@
+# v1.0.2
+##  02/05/2021
+
+1. [](#bugfix)
+   * Added missing jQuery dependency 
+   
 # v1.0.1
 ##  01/06/2021
 
