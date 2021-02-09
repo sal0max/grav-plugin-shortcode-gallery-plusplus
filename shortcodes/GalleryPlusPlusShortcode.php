@@ -12,6 +12,9 @@ class GalleryPlusPlusShortcode extends Shortcode
      */
     public function init()
     {
+        // disable caching. see https://discourse.getgrav.org/t/plugins-and-caching/6795/8
+        $this->grav['config']->set('system.cache.enabled', false);
+
         // gallery
         $this->shortcode->getHandlers()->add('gallery', function (ShortcodeInterface $sc) {
             // get default settings
