@@ -1,19 +1,47 @@
+{# a random id for each gallery #}
+{% set id = random() %}
+
+{# add css libraries #}
 {% block stylesheets %}
     {% do assets.addCss('plugin://shortcode-gallery-plusplus/vendor/glightbox/glightbox.min.css') %}
     {% do assets.addCss('plugin://shortcode-gallery-plusplus/vendor/justified-gallery/justifiedGallery.min.css') %}
 {% endblock %}
 
+{# add js libraries #}
 {% block javascripts %}
     {% do assets.addJs('jquery', 101) %}
     {% do assets.addJs('plugin://shortcode-gallery-plusplus/vendor/glightbox/glightbox.min.js') %}
     {% do assets.addJs('plugin://shortcode-gallery-plusplus/vendor/justified-gallery/jquery.justifiedGallery.min.js') %}
 {% endblock %}
 
-{# a random id for each gallery #}
-{% set id = random() %}
+{# add javascript for gallery and lightbox configuration #}
+{% do assets.addInlineJs(
+'$("#' ~ id ~ '").justifiedGallery({
+    rowHeight: ' ~  rowHeight  ~ ',
+    margins: ' ~  margins  ~ ',
+    lastRow: "' ~  lastRow  ~ '",
+    captions: ' ~  captions  ~ ',
+    border: ' ~  border  ~ ',
+});
 
+GLightbox({
+    selector: ".glightbox-' ~ id ~ '",
+    openEffect: "' ~ openEffect ~ '",
+    closeEffect: "' ~ closeEffect ~ '",
+    slideEffect: "' ~ slideEffect ~ '",
+    closeButton: ' ~ closeButton ~ ',
+    touchNavigation: ' ~ touchNavigation ~ ',
+    touchFollowAxis: ' ~ touchFollowAxis ~ ',
+    keyboardNavigation: ' ~ keyboardNavigation ~ ',
+    closeOnOutsideClick: ' ~ closeOnOutsideClick ~ ',
+    loop: ' ~ loop ~ ',
+    draggable: ' ~ draggable ~ ',
+    descPosition: "' ~ descPosition ~ '",
+});', { 'group': 'bottom' })
+%}
+
+{# html #}
 <p id="{{ id }}">
-    {# add all images with added links #}
     {% for image in images %}
         {% set index = loop.index0 %}
         <a href="{{ links[index] }}" class="glightbox-{{ id }}"
@@ -27,28 +55,3 @@
     {% endfor %}
 </p>
 
-{# finally add javascript for gallery and lightbox and configure them #}
-<script>
-    $("#{{ id }}").justifiedGallery({
-        rowHeight: {{ rowHeight }},
-        margins: {{ margins }},
-        lastRow: '{{ lastRow }}',
-        captions: {{ captions }},
-        border: {{ border }}
-    });
-
-    GLightbox({
-        selector: ".glightbox-{{ id }}",
-        openEffect: "{{ openEffect }}",
-        closeEffect: "{{ closeEffect }}",
-        slideEffect: "{{ slideEffect }}",
-        closeButton: {{ closeButton }},
-        touchNavigation: {{ touchNavigation }},
-        touchFollowAxis: {{ touchFollowAxis }},
-        keyboardNavigation: {{ keyboardNavigation }},
-        closeOnOutsideClick: {{ closeOnOutsideClick }},
-        loop: {{ loop }},
-        draggable: {{ draggable }},
-        descPosition: "{{ descPosition }}",
-    });
-</script>
