@@ -45,7 +45,7 @@ class GalleryPlusPlusShortcode extends Shortcode
             $content = $sc->getContent();
 
             // check validity
-            if (str_contains($content, "<pre>"))
+            if (strpos($content, "<pre>") !== false)
                 return "<p style='color: #d40000; font-weight: bold; padding: 1rem 0;'>[Shortcode Gallery++] Error:<br> 
                         &gt; Images provided got parsed as code block.<br>
                         &gt; Please check your markdown file and make sure the images aren't indented by tab or more than three spaces.</p>";
