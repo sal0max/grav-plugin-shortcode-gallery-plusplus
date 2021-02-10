@@ -30,14 +30,9 @@ Just have a look for yourself:
 
 * You can of course create several galleries on the same page.
 * You have plenty of settings you can change in the admin panel.
-* You can also change everything for a single galleries via shortcode. For example:
+* You can also change everything for a single galleries via shortcode. For example:  
 ```markdown
-[gallery
-    rowHeight=230
-    margins=25
-    lastRow="justify"
-    captions="false"
-    border=0]
+[gallery rowHeight=230 margins=25 lastRow="justify" captions="false" border=0]
 ![Alt text 1](image.jpg)
 ![Alt text 2](/images/image.jpg)
 ![relative link](../image.jpg)
