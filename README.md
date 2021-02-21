@@ -41,6 +41,34 @@ Just have a look for yourself:
 [/gallery]
 ```
 
+## Gallery settings
+
+| parameter   | possible values | description |
+|-------------|-----------------| ------------|
+| `rowHeight` | dimension in pixel | The preferred rows height.
+| `margins`   | dimension in pixel | The margins between the images.
+| `lastRow`   | `justify`, `hide`, `nojustify`, `center`, `right` | `justify`: justifies the last row; `hide`: hides the row if it can't be justified; `nojustify`: align the last row to the left; `center`: align the last row to the center; `right`: align the last row to the right 
+| `captions`  | `true`, `false` | Enable captions that appear when the mouse hovers an image.
+| `border`    | dimension in pixel | The border size of the gallery. With a negative value the border will be the same as `margins`.
+
+## Lightbox settings
+
+| parameter             | possible values | description |
+|-----------------------|-----------------| ------------|
+| `openEffect`          | `zoom`, `fade`, `none` |
+| `closeEffect`         | `zoom`, `fade`, `none` |
+| `slideEffect`         | `slide`, `zoom`, `fade`, `none` |
+| `closeButton`         | `true`, `false` | Show or hide the close button.
+| `touchNavigation`     | `true`, `false` | Enable touch navigation (swipe).
+| `touchFollowAxis`     | `true`, `false` | Image follow axis when dragging on mobile.
+| `keyboardNavigation`  | `true`, `false` | Enable or disable the keyboard navigation.
+| `closeOnOutsideClick` | `true`, `false` | Close the lightbox when clicking outside the active slide.
+| `loop`                | `true`, `false` | Loop slides on end.
+| `draggable`           | `true`, `false` | Enable or disable mouse drag to go to previous and next slide.
+| `descEnabled`         | `true`, `false` |
+| `descPosition`        | `bottom`, `top`, `left`, `right` | The position for slides description.
+
+
 ---
 
 ## Installation
