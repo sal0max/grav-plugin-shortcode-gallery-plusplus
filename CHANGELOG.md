@@ -1,3 +1,9 @@
+# v1.0.4
+##  04/04/2021
+
+1. [](#bugfix)
+   * Fixes a problem where no images would be shown when used together with the `trilbymedia/grav-plugin-image-captions` plugin
+
 # v1.0.3
 ##  02/10/2021
 

@@ -53,7 +53,7 @@ class GalleryPlusPlusShortcode extends Shortcode
             // remove <p> tags
             $content = preg_replace('(<p>|</p>)', '', $content);
             // split up images to arrays of img links
-            preg_match_all('|<img.*?/>|', $content, $images);
+            preg_match_all('|<img.*?>|', $content, $images);
             // get all links
             preg_match_all('|src="(.*?)"|', $content, $links);
             // get all alt descriptions
