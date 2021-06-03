@@ -1,3 +1,15 @@
+# v1.1.0
+##  06/03/2021
+
+1. [](#bugfix)
+   * Sometimes the descriptions could get mixed up and be displayed with the wrong image. This is now fixed.
+2. [](#new)
+   * You can now provide different values for **captions** (shown on the images in the gallery) and **descriptions** (shown in the lightbox):  
+     An images `alt`-value will be the caption, its `title`-value the description. Example:  
+     `![image caption](image.jpg "image description")`  
+     The descriptions can even be html formatted:  
+     `![image caption](image.jpg "<strong>Descriptions</strong> can also<br>be <i>HTML</i> formatted.")`
+
 # v1.0.6
 ##  05/23/2021
 

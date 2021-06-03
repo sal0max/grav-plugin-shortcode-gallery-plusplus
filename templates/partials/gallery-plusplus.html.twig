@@ -43,14 +43,13 @@ GLightbox({
 {# html #}
 <p id="{{ id }}">
     {% for image in images %}
-        {% set index = loop.index0 %}
-        <a href="{{ links[index] }}" class="glightbox-{{ id }}"
-                {# add description only if enabled #}
+        <a href="{{ image["src"] }}" class="glightbox-{{ id }}"
+                {# add description, if enabled #}
                 {% if descEnabled == "true" %}
-                    data-description="{{ descs[index] }}"
+                    data-description="{{ image["title"]|raw }}"
                 {% endif %}
         >
-            {{ image|raw }}
+            {{ image["image"]|raw }}
         </a>
     {% endfor %}
 </p>

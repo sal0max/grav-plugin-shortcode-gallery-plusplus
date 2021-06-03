@@ -54,11 +54,39 @@ class GalleryPlusPlusShortcode extends Shortcode
             $content = preg_replace('(<p>|</p>)', '', $content);
             // split up images to arrays of img links
             preg_match_all('|<img.*?>|', $content, $images);
-            // get all links
-            preg_match_all('|src="(.*?)"|', $content, $links);
-            // get all alt descriptions
-            preg_match_all('|alt="(.*?)"|', $content, $descs);
 
+            $images_final = [];
+            foreach ($images[0] as $image) {
+                // get src attribute
+                preg_match('|src="(.*?)"|', $image, $links);
+
+                // get alt attribute
+                preg_match('|alt="(.*?)"|', $image, $alts);
+
+                // get title attribute - and strip html from it
+                // e.g.:    "<strong>Title 1</strong><br />Example 1<br/>More description<br>Bla bla"
+                // becomes: "Title 1 | Example 1 | More description | Bla bla"
+                preg_match('/title="(.*?)"/', $image, $titles);
+                if (!empty($titles)) {
+                    // replace br tags with " | "
+                    $title_clean = preg_replace('/<br *\/*>/', ' | ', html_entity_decode($titles[1]));
+                    // strip html
+                    $title_clean = strip_tags(html_entity_decode($title_clean));
+                    // set as new title
+                    $image = preg_replace('/title=".*?"/', "title=\"$title_clean\"", $image);
+                } else {
+                    $titles[1] = null;
+                }
+
+                // combine
+                array_push($images_final, [
+                    // full
+                    "image" => $image,
+                    "src" => $links[1],
+                    "alt" => $alts[1],
+                    "title" => $titles[1],
+                    ]);
+            }
 
             return $this->twig->processTemplate('partials/gallery-plusplus.html.twig', [
                 // gallery settings
@@ -81,9 +109,7 @@ class GalleryPlusPlusShortcode extends Shortcode
                 'descEnabled' => $descEnabled,
                 'descPosition' => $descPosition,
                 // images
-                'images' => $images[0],
-                'links' => $links[1],
-                'descs' => $descs[1],
+                'images' => $images_final,
             ]);
         });
     }

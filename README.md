@@ -12,8 +12,8 @@ It's quite simple. Just wrap some image links in `[gallery]` tags:
 
 ```markdown
 [gallery]
-![Alt text 1](image.jpg)
-![Alt text 2](/images/image.jpg)
+![Alt text 1](image.jpg "Some description to be used in the lightbox")
+![Alt text 2](/images/image.jpg "<strong>Descriptions</strong> can also<br>be <i>HTML</i> formatted.")
 ![relative link](../image.jpg)
 ![remote link](https://remotesite.com/image.jpg)
 ...
@@ -33,8 +33,8 @@ Just have a look for yourself:
 * You can also change everything for a single galleries via shortcode. For example:  
 ```markdown
 [gallery rowHeight=230 margins=25 lastRow="justify" captions="false" border=0]
-![Alt text 1](image.jpg)
-![Alt text 2](/images/image.jpg)
+![Alt text 1](image.jpg "Some description to be used in the lightbox")
+![Alt text 2](/images/image.jpg "<strong>Descriptions</strong> can also<br>be <i>HTML</i> formatted.")
 ![relative link](../image.jpg)
 ![remote link](https://remotesite.com/image.jpg)
 ...
@@ -48,7 +48,7 @@ Just have a look for yourself:
 | `rowHeight` | dimension in pixel | The preferred rows height.
 | `margins`   | dimension in pixel | The margins between the images.
 | `lastRow`   | `justify`, `hide`, `nojustify`, `center`, `right` | `justify`: justifies the last row; `hide`: hides the row if it can't be justified; `nojustify`: align the last row to the left; `center`: align the last row to the center; `right`: align the last row to the right 
-| `captions`  | `true`, `false` | Enable captions that appear when the mouse hovers an image.
+| `captions`  | `true`, `false` | Enable captions that appear when the mouse hovers an image. **For caption, the alt-text of an image is used: `![caption](image.jpg)`** 
 | `border`    | dimension in pixel | The border size of the gallery. With a negative value the border will be the same as `margins`.
 
 ## Lightbox settings
@@ -65,7 +65,7 @@ Just have a look for yourself:
 | `closeOnOutsideClick` | `true`, `false` | Close the lightbox when clicking outside the active slide.
 | `loop`                | `true`, `false` | Loop slides on end.
 | `draggable`           | `true`, `false` | Enable or disable mouse drag to go to previous and next slide.
-| `descEnabled`         | `true`, `false` |
+| `descEnabled`         | `true`, `false` | **For description, the title-text of an image is used: `![](image.jpg "description")`**
 | `descPosition`        | `bottom`, `top`, `left`, `right` | The position for slides description.
 
 
