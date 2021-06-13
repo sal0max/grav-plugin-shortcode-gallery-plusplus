@@ -16,33 +16,33 @@ class GalleryPlusPlusShortcode extends Shortcode
         $this->grav['config']->set('system.cache.enabled', false);
 
         // gallery
-        $this->shortcode->getHandlers()->add('gallery', function (ShortcodeInterface $sc) {
+        $this->shortcode->getHandlers()->add('gallery', function (ShortcodeInterface $shortcode) {
             // get default settings
             $pluginConfig = $this->config->get('plugins.shortcode-gallery-plusplus');
 
             // overwrite default gallery settings, if set by user
-            $rowHeight = $sc->getParameter('rowHeight', $pluginConfig['gallery']['rowHeight']);
-            $margins = $sc->getParameter('margins', $pluginConfig['gallery']['margins']);
-            $lastRow = $sc->getParameter('lastRow', $pluginConfig['gallery']['lastRow']);
-            $captions = $sc->getParameter('captions', $pluginConfig['gallery']['captions']);
-            $border = $sc->getParameter('border', $pluginConfig['gallery']['border']);
+            $rowHeight = $shortcode->getParameter('rowHeight', $pluginConfig['gallery']['rowHeight']);
+            $margins = $shortcode->getParameter('margins', $pluginConfig['gallery']['margins']);
+            $lastRow = $shortcode->getParameter('lastRow', $pluginConfig['gallery']['lastRow']);
+            $captions = $shortcode->getParameter('captions', $pluginConfig['gallery']['captions']);
+            $border = $shortcode->getParameter('border', $pluginConfig['gallery']['border']);
 
             // overwrite default lightbox settings, if set by user
-            $openEffect = $sc->getParameter('openEffect', $pluginConfig['lightbox']['openEffect']);
-            $closeEffect = $sc->getParameter('closeEffect', $pluginConfig['lightbox']['closeEffect']);
-            $slideEffect = $sc->getParameter('slideEffect', $pluginConfig['lightbox']['slideEffect']);
-            $closeButton = $sc->getParameter('closeButton', $pluginConfig['lightbox']['closeButton']);
-            $touchNavigation = $sc->getParameter('touchNavigation', $pluginConfig['lightbox']['touchNavigation']);
-            $touchFollowAxis = $sc->getParameter('touchFollowAxis', $pluginConfig['lightbox']['touchFollowAxis']);
-            $keyboardNavigation = $sc->getParameter('keyboardNavigation', $pluginConfig['lightbox']['keyboardNavigation']);
-            $closeOnOutsideClick = $sc->getParameter('closeOnOutsideClick', $pluginConfig['lightbox']['closeOnOutsideClick']);
-            $loop = $sc->getParameter('loop', $pluginConfig['lightbox']['loop']);
-            $draggable = $sc->getParameter('draggable', $pluginConfig['lightbox']['draggable']);
-            $descEnabled = $sc->getParameter('descEnabled', $pluginConfig['lightbox']['descEnabled']);
-            $descPosition = $sc->getParameter('descPosition', $pluginConfig['lightbox']['descPosition']);
+            $openEffect = $shortcode->getParameter('openEffect', $pluginConfig['lightbox']['openEffect']);
+            $closeEffect = $shortcode->getParameter('closeEffect', $pluginConfig['lightbox']['closeEffect']);
+            $slideEffect = $shortcode->getParameter('slideEffect', $pluginConfig['lightbox']['slideEffect']);
+            $closeButton = $shortcode->getParameter('closeButton', $pluginConfig['lightbox']['closeButton']);
+            $touchNavigation = $shortcode->getParameter('touchNavigation', $pluginConfig['lightbox']['touchNavigation']);
+            $touchFollowAxis = $shortcode->getParameter('touchFollowAxis', $pluginConfig['lightbox']['touchFollowAxis']);
+            $keyboardNavigation = $shortcode->getParameter('keyboardNavigation', $pluginConfig['lightbox']['keyboardNavigation']);
+            $closeOnOutsideClick = $shortcode->getParameter('closeOnOutsideClick', $pluginConfig['lightbox']['closeOnOutsideClick']);
+            $loop = $shortcode->getParameter('loop', $pluginConfig['lightbox']['loop']);
+            $draggable = $shortcode->getParameter('draggable', $pluginConfig['lightbox']['draggable']);
+            $descEnabled = $shortcode->getParameter('descEnabled', $pluginConfig['lightbox']['descEnabled']);
+            $descPosition = $shortcode->getParameter('descPosition', $pluginConfig['lightbox']['descPosition']);
 
             // find all images, that a gallery contains
-            $content = $sc->getContent();
+            $content = $shortcode->getContent();
 
             // check validity
             if (strpos($content, "<pre>") !== false)
