@@ -20,6 +20,17 @@ It's quite simple. Just wrap some image links in `[gallery]` tags:
 [/gallery]
 ```
 
+##Optimize page loading
+
+Prepare thumbnails images: https://learn.getgrav.org/content/media#thumbnail-location
+
+```markdown
+[gallery]
+![Alt text 1](image.jpg?link "After calling link(), Grav will automatically switch the display mode to thumbnail.")
+...
+[/gallery]
+```
+
 ## Okay, what does it look like?
 
 This plugin combines a nice justified gallery layout with an eye-pleasing lightbox.  

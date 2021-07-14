@@ -53,12 +53,16 @@ class GalleryPlusPlusShortcode extends Shortcode
             // remove <p> tags
             $content = preg_replace('(<p>|</p>)', '', $content);
             // split up images to arrays of img links
-            preg_match_all('|<img.*?>|', $content, $images);
+            preg_match_all('|(<a.*?>)?(?P<image><img.*?>)|', $content, $images);
 
             $images_final = [];
-            foreach ($images[0] as $image) {
+            foreach ($images[0] as $key => $row) {
                 // get src attribute
-                preg_match('|src="(.*?)"|', $image, $links);
+                preg_match('|href="(.*?)"|', $row, $href);
+                preg_match('|src="(.*?)"|', $row, $src);
+
+                $url = $href[1] ?: $src[1];
+                $image = $images['image'][$key];
 
                 // get alt attribute
                 preg_match('|alt="(.*?)"|', $image, $alts);
@@ -82,7 +86,7 @@ class GalleryPlusPlusShortcode extends Shortcode
                 array_push($images_final, [
                     // full
                     "image" => $image,
-                    "src" => $links[1],
+                    "src" => $url,
                     "alt" => $alts[1],
                     "title" => $titles[1],
                     ]);
