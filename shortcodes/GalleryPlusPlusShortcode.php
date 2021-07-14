@@ -61,7 +61,7 @@ class GalleryPlusPlusShortcode extends Shortcode
                 preg_match('|href="(.*?)"|', $row, $href);
                 preg_match('|src="(.*?)"|', $row, $src);
 
-                $url = $href[1] ?: $src[1];
+                $url = $href[1] ?? $src[1];
                 $image = $images['image'][$key];
 
                 // get alt attribute
