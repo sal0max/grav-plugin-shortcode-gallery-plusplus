@@ -20,7 +20,7 @@ It's quite simple. Just wrap some image links in `[gallery]` tags:
 [/gallery]
 ```
 
-##Optimize page loading
+## Optimize page loading
 
 Prepare thumbnails images: https://learn.getgrav.org/content/media#thumbnail-location
 
