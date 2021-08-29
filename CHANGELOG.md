@@ -1,8 +1,14 @@
+# v1.1.1
+##  08/29/2021
+
+1. [](#improved)
+    * Updated GLightbox to [3.1.0](https://github.com/biati-digital/glightbox/releases/tag/3.1.0)
+
 # v1.1.0
 ##  06/03/2021
 
 1. [](#bugfix)
-   * Sometimes the descriptions could get mixed up and be displayed with the wrong image. This is now fixed.
+    * Sometimes the descriptions could get mixed up and be displayed with the wrong image. This is now fixed.
 2. [](#new)
    * You can now provide different values for **captions** (shown on the images in the gallery) and **descriptions** (shown in the lightbox):  
      An images `alt`-value will be the caption, its `title`-value the description. Example:  
