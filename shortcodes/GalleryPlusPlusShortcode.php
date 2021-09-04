@@ -89,6 +89,7 @@ class GalleryPlusPlusShortcode extends Shortcode
             }
 
             return $this->twig->processTemplate('partials/gallery-plusplus.html.twig', [
+                'page' => $this->grav['page'], // used for image resizing
                 // gallery settings
                 'rowHeight' => $rowHeight,
                 'margins' => $margins,

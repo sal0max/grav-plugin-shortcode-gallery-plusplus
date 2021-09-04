@@ -49,7 +49,15 @@ GLightbox({
                     data-description="{{ image["title"]|raw }}"
                 {% endif %}
         >
-            {{ image["image"]|raw }}
+            {% set image_parts = pathinfo(image["src"]) %}
+            {% set image_basename = image_parts.basename %}
+            {% set original_image = page.media[image_parts.basename] %}
+            {% if original_image %}
+                {% set resize_factor = (rowHeight * 1.5) / original_image.height %}{# 1.5 for high resolution displays #}
+                {{ original_image.cropZoom(original_image.width*resize_factor, original_image.height*resize_factor).html("", image.alt)|raw }}{# Do not set "title", it's useless #}
+            {% else %}
+                {{ image["image"]|raw }}
+            {% endif %}
         </a>
     {% endfor %}
 </p>
