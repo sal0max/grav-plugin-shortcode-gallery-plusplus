@@ -26,6 +26,7 @@ class GalleryPlusPlusShortcode extends Shortcode
             $lastRow = $shortcode->getParameter('lastRow', $pluginConfig['gallery']['lastRow']);
             $captions = $shortcode->getParameter('captions', $pluginConfig['gallery']['captions']);
             $border = $shortcode->getParameter('border', $pluginConfig['gallery']['border']);
+            $resizeFactor = $shortcode->getParameter('resizeFactor ', $pluginConfig['gallery']['resizeFactor']);
 
             // overwrite default lightbox settings, if set by user
             $openEffect = $shortcode->getParameter('openEffect', $pluginConfig['lightbox']['openEffect']);
@@ -96,6 +97,7 @@ class GalleryPlusPlusShortcode extends Shortcode
                 'lastRow' => $lastRow,
                 'captions' => $captions,
                 'border' => $border,
+                'resizeFactor' => $resizeFactor,
                 // lightbox settings
                 'openEffect' => $openEffect,
                 'closeEffect' => $closeEffect,

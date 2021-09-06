@@ -78,6 +78,16 @@ form:
           validate:
             min: -1
           size: small
+        gallery.resizeFactor:
+          label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_RESIZE_FACTOR
+          help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_RESIZE_FACTOR_HELP
+          type: select
+          options:
+            1: "1"
+            1.5: "1.5"
+            2: "2"
+            2.5: "2.5"
+          size: small
     lightbox:
       type: section
       title: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.LIGHTBOX_SETTINGS

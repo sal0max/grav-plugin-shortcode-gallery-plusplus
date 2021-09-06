@@ -57,7 +57,7 @@ GLightbox({
             {% set original_image = "user://" ~ original_image %}
             {% set original_image = page.media[original_image] %}{# can load any image in the /user directory #}
             {% if original_image %}
-                {% set resize_factor = (rowHeight * 1.5) / original_image.height %}{# 1.5 for high resolution displays #}
+                {% set resize_factor = (rowHeight * resizeFactor) / original_image.height %}
                 {{ original_image.cropResize(original_image.width*resize_factor, original_image.height*resize_factor).html("", image.alt)|raw }}{# Do not set "title", it's useless #}
             {% else %}
                 {{ image["image"]|raw }}
