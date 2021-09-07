@@ -1,14 +1,24 @@
+# v1.2.0
+##  09/07/2021
+
+1. [](#new)
+   * The thumbnail images in the gallery will now use a smaller resolution, to improve performance. Change the thumbnail size in the settings!
+2. [](#bugfix)
+   * The toggle buttons in the settings were too narrow for some languages, cutting off text. This is fixed now.
+3. [](#improved)
+   * This plugin is now compatible to be used with all the caching features of Grav.
+
 # v1.1.1
 ##  08/29/2021
 
 1. [](#improved)
-    * Updated GLightbox to [3.1.0](https://github.com/biati-digital/glightbox/releases/tag/3.1.0)
+   * Updated GLightbox to [3.1.0](https://github.com/biati-digital/glightbox/releases/tag/3.1.0)
 
 # v1.1.0
 ##  06/03/2021
 
 1. [](#bugfix)
-    * Sometimes the descriptions could get mixed up and be displayed with the wrong image. This is now fixed.
+   * Sometimes the descriptions could get mixed up and be displayed with the wrong image. This is now fixed.
 2. [](#new)
    * You can now provide different values for **captions** (shown on the images in the gallery) and **descriptions** (shown in the lightbox):  
      An images `alt`-value will be the caption, its `title`-value the description. Example:  
@@ -52,7 +62,7 @@
 ##  01/06/2021
 
 1. [](#improved)
-   * Updated GLightbox to 3.0.7
+    Updated GLightbox to 3.0.7
 2. [](#improved)
    * Improved image parsing
 
