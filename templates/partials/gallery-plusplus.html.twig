@@ -53,8 +53,8 @@ GLightbox({
             {% if base_url %}
                 {% set original_image = original_image|replace({(base_url): ""}) %}
             {% endif %}
-            {% set original_image = original_image|replace({"/user/": ""}) %}
-            {% set original_image = "user://" ~ original_image %}
+            {% set original_image = original_image|split("/user/", 2) %}{# be careful, a page can be named "user", only replace the first occurence #}
+            {% set original_image = "user://" ~ original_image[1] %}
             {% set original_image = page.media[original_image] %}{# can load any image in the /user directory #}
             {% if original_image %}
                 {% set resize_factor = (rowHeight * resizeFactor) / original_image.height %}
