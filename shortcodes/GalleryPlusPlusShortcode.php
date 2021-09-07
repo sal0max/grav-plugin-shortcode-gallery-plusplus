@@ -12,9 +12,6 @@ class GalleryPlusPlusShortcode extends Shortcode
      */
     public function init()
     {
-        // disable caching. see https://discourse.getgrav.org/t/plugins-and-caching/6795/8
-        $this->grav['config']->set('system.cache.enabled', false);
-
         // gallery
         $this->shortcode->getHandlers()->add('gallery', function (ShortcodeInterface $shortcode) {
             // get default settings
@@ -87,6 +84,13 @@ class GalleryPlusPlusShortcode extends Shortcode
                     "title" => $titles[1],
                     ]);
             }
+
+            // give JS and CSS so that they can be cached
+            $this->shortcode->addAssets('css', 'plugin://shortcode-gallery-plusplus/vendor/glightbox/glightbox.min.css');
+            $this->shortcode->addAssets('css', 'plugin://shortcode-gallery-plusplus/vendor/justified-gallery/justifiedGallery.min.css');
+            $this->shortcode->addAssets('js', ['jquery', 101]);
+            $this->shortcode->addAssets('js', 'plugin://shortcode-gallery-plusplus/vendor/glightbox/glightbox.min.js');
+            $this->shortcode->addAssets('js', 'plugin://shortcode-gallery-plusplus/vendor/justified-gallery/jquery.justifiedGallery.min.js');
 
             return $this->twig->processTemplate('partials/gallery-plusplus.html.twig', [
                 // gallery settings
