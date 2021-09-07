@@ -70,7 +70,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         gallery.border:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_BORDER
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_BORDER_HELP
@@ -127,7 +126,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         lightbox.touchNavigation:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_TOUCH_NAVIGATION
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_TOUCH_NAVIGATION_HELP
@@ -136,7 +134,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         lightbox.touchFollowAxis:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_TOUCH_FOLLOW_AXIS
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_TOUCH_FOLLOW_AXIS_HELP
@@ -145,7 +142,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         lightbox.keyboardNavigation:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_KEYBOARD_NAVIGATION
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_KEYBOARD_NAVIGATION_HELP
@@ -154,7 +150,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         lightbox.closeOnOutsideClick:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_CLOSE_ON_OUTSIDE_CLICK
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_CLOSE_ON_OUTSIDE_CLICK_HELP
@@ -163,7 +158,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         lightbox.loop:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_LOOP
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_LOOP_HELP
@@ -172,7 +166,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         lightbox.draggable:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DRAGGABLE
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DRAGGABLE_HELP
@@ -181,7 +174,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         lightbox.descEnabled:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DESC_ENABLED
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DESC_ENABLED_HELP
@@ -190,7 +182,6 @@ form:
           options:
             "true": PLUGIN_ADMIN.ENABLED
             "false": PLUGIN_ADMIN.DISABLED
-          size: small
         lightbox.descPosition:
           label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DESC_POSITION
           help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DESC_POSITION_HELP
