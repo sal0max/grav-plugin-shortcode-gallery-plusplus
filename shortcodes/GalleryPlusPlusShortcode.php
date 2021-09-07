@@ -23,6 +23,7 @@ class GalleryPlusPlusShortcode extends Shortcode
             $lastRow = $shortcode->getParameter('lastRow', $pluginConfig['gallery']['lastRow']);
             $captions = $shortcode->getParameter('captions', $pluginConfig['gallery']['captions']);
             $border = $shortcode->getParameter('border', $pluginConfig['gallery']['border']);
+            $resizeFactor = $shortcode->getParameter('resizeFactor ', $pluginConfig['gallery']['resizeFactor']);
 
             // overwrite default lightbox settings, if set by user
             $openEffect = $shortcode->getParameter('openEffect', $pluginConfig['lightbox']['openEffect']);
@@ -93,12 +94,14 @@ class GalleryPlusPlusShortcode extends Shortcode
             $this->shortcode->addAssets('js', 'plugin://shortcode-gallery-plusplus/vendor/justified-gallery/jquery.justifiedGallery.min.js');
 
             return $this->twig->processTemplate('partials/gallery-plusplus.html.twig', [
+                'page' => $this->grav['page'], // used for image resizing
                 // gallery settings
                 'rowHeight' => $rowHeight,
                 'margins' => $margins,
                 'lastRow' => $lastRow,
                 'captions' => $captions,
                 'border' => $border,
+                'resizeFactor' => $resizeFactor,
                 // lightbox settings
                 'openEffect' => $openEffect,
                 'closeEffect' => $closeEffect,

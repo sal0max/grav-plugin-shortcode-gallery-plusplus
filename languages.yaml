@@ -19,6 +19,9 @@ en:
     DEFAULT_BORDER: "Border size"
     DEFAULT_BORDER_HELP: "Decide the border size of the gallery. Use '-1' to set the border the same size as the margins."
 
+    DEFAULT_RESIZE_FACTOR: "Thumbnails resize factor"
+    DEFAULT_RESIZE_FACTOR_HELP: "Decide the resize factor of the generated thumbnails. The thumbnails heigh will be the heigh of the row multiplied by this value."
+
     # GLightbox
     LIGHTBOX_SETTINGS: "Lightbox Settings"
 
