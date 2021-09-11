@@ -10,30 +10,30 @@
                     data-description="{{ image["title"]|raw }}"
                 {% endif %}
         >
-            {# try to generate a thumbnail image #}
-            {# get the full image url           https://mywebsite.com/user/pages/02.gallery/01.landscapes/image01.jpg #}
-            {% set original_image = image["src"] %}
-            {# remove the sites url                                  /user/pages/02.gallery/01.landscapes/image01.jpg #}
-            {% if base_url %}
-                {% set original_image = original_image|replace({(base_url): ""}) %}
-            {% endif %}
-            {# remove "/user/"                                             pages/02.gallery/01.landscapes/image01.jpg #}
-            {# be careful, a page can be named "user", only replace the first occurence #}
-            {% set original_image = original_image|split("/user/", 2) %}
-            {# add "user://"                                        user://pages/02.gallery/01.landscapes/image01.jpg #}
-            {% set original_image = "user://" ~ original_image[1] %}
-            {# use the generated url to get the image via grav (can load any image in the /user directory) #}
-            {% set original_image = page.media[original_image] %}
-            {# success: can now generate a smaller thumbnail image #}
-            {% if original_image %}
-                {% set resize_factor = (rowHeight * resizeFactor) / original_image.height %}
+            {#- try to generate a thumbnail image #}
+            {#- get the full image url           https://mywebsite.com/user/pages/02.gallery/01.landscapes/image01.jpg #}
+            {%- set original_image = image["src"] %}
+            {#- remove the sites url                                  /user/pages/02.gallery/01.landscapes/image01.jpg #}
+            {%- if base_url %}
+                {%- set original_image = original_image|replace({(base_url): ""}) %}
+            {%- endif %}
+            {#- remove "/user/"                                             pages/02.gallery/01.landscapes/image01.jpg #}
+            {#- be careful, a page can be named "user", only replace the first occurence #}
+            {%- set original_image = original_image|split("/user/", 2) %}
+            {#- add "user://"                                        user://pages/02.gallery/01.landscapes/image01.jpg #}
+            {%- set original_image = "user://" ~ original_image[1] %}
+            {#- use the generated url to get the image via grav (can load any image in the /user directory) #}
+            {%- set original_image = page.media[original_image] %}
+            {#- success: can now generate a smaller thumbnail image #}
+            {%- if original_image %}
+                {%- set resize_factor = (rowHeight * resizeFactor) / original_image.height %}
                 {{ original_image
                     .cropResize(original_image.width * resize_factor, original_image.height * resize_factor)
                     .html(image.title, image.alt)|raw }}
-            {# couldn't find the image inside grav, so just use the original url #}
-            {% else %}
+            {#- couldn't find the image inside grav, so just use the original url #}
+            {%- else %}
                 {{ image["image"]|raw }}
-            {% endif %}
+            {%- endif %}
         </a>
     {% endfor %}
 </p>
