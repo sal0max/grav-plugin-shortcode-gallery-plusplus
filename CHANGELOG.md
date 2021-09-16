@@ -1,12 +1,18 @@
+# v1.2.1
+##  09/17/2021
+
+1. [](#improved)
+    * Improved formatting of the generated HTML.
+
 # v1.2.0
 ##  09/07/2021
 
 1. [](#new)
-   * The thumbnail images in the gallery will now use a smaller resolution, to improve performance. Change the thumbnail size in the settings!
+    * The thumbnail images in the gallery will now use a smaller resolution, to improve performance. Change the thumbnail size in the settings!
 2. [](#bugfix)
-   * The toggle buttons in the settings were too narrow for some languages, cutting off text. This is fixed now.
+    * The toggle buttons in the settings were too narrow for some languages, cutting off text. This is fixed now.
 3. [](#improved)
-   * This plugin is now compatible to be used with all the caching features of Grav.
+    * This plugin is now compatible to be used with all the caching features of Grav.
 
 # v1.1.1
 ##  08/29/2021
