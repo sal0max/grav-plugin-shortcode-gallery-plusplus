@@ -3,6 +3,8 @@
 namespace Grav\Plugin;
 
 use Grav\Common\Plugin;
+use RocketTheme\Toolbox\Event\Event;
+use Grav\Common\Page\Page;
 
 /**
  * Class ShortcodeGalleryPlusPlus
@@ -10,6 +12,8 @@ use Grav\Common\Plugin;
  */
 class ShortcodeGalleryPlusPlusPlugin extends Plugin
 {
+    private ?Page $currentPage = null;
+
     /**
      * @return array
      *
@@ -24,7 +28,9 @@ class ShortcodeGalleryPlusPlusPlugin extends Plugin
     {
         return [
             'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
-            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0]
+            'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
+            'onPageContentRaw' => ['onPageContentRaw', 1000],             // before the Shortcode Core plugin
+            'onPageContentProcessed' => ['onPageContentProcessed', 1000], // before the Shortcode Core plugin
         ];
     }
 
@@ -34,6 +40,23 @@ class ShortcodeGalleryPlusPlusPlugin extends Plugin
     public function onTwigTemplatePaths()
     {
         $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
+    }
+
+    /**
+     * Detect which page is being processed, even if it is in a collection.
+     * We store it so that our shortcode can use it.
+     */
+    public function onPageContentRaw(Event $event)
+    {
+        $this->currentPage = $event['page'];
+    }
+    public function onPageContentProcessed(Event $event)
+    {
+        $this->currentPage = $event['page'];
+    }
+    public function getCurrentPage()
+    {
+        return $this->currentPage;
     }
 
     /**
