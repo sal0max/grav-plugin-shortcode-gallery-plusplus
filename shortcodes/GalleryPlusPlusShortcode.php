@@ -17,6 +17,34 @@ class GalleryPlusPlusShortcode extends Shortcode
             // get default settings
             $pluginConfig = $this->config->get('plugins.shortcode-gallery-plusplus');
 
+
+            // get the current page in process (i.e. the page where the shortcode is being processed)
+            // warning, it can be different from $this->grav['page'], if ever we browse a collection
+            // this is exactly what the Feed plugin does
+            $currentPage = $this->grav['plugins']->getPlugin('shortcode-gallery-plusplus')->getCurrentPage();
+
+            // values to check if we are in a feed (RSS, Atom, JSON)
+            $type = $this->grav['uri']->extension(); // Get current page extension
+            $feed_config = $this->grav['config']->get('plugins.feed');
+            $feed_types = array('rss','atom');
+            if ($feed_config && $feed_config['enable_json_feed'])
+                $feed_types[] = 'json';
+
+            // check if the rendered page will be cached or not
+            $renderingCacheDisabled = isset($currentPage->header()->cache_enable)
+                                      && !$currentPage->header()->cache_enable
+                                      || !$this->grav['config']->get('system.cache.enabled');
+
+            // check if we are in a feed (RSS, Atom, JSON)
+            // we also check that the page will not be cached once rendered (otherwise the gallery will not be generated on the normal page)
+            if ( $renderingCacheDisabled &&                       // if the current page does not cache its rendering
+                 $feed_config && $feed_config['enabled'] &&       // and the Feed plugin is enabled
+                 isset($this->grav['page']->header()->content) && // and the current page has a collection
+                 $feed_types && in_array($type, $feed_types) ) {  // and the Feed plugin handles it
+                return $shortcode->getContent(); // return unprocessed content (because in RSS, Javascripts don't work)
+            }
+
+
             // overwrite default gallery settings, if set by user
             $rowHeight = $shortcode->getParameter('rowHeight', $pluginConfig['gallery']['rowHeight']);
             $margins = $shortcode->getParameter('margins', $pluginConfig['gallery']['margins']);
