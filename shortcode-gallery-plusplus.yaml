@@ -19,3 +19,5 @@ lightbox:
   draggable: "true"
   descEnabled: "false"
   descPosition: bottom
+  descMoreText: "See more"
+  descMoreLength: 60

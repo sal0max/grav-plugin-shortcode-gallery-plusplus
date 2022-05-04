@@ -66,6 +66,8 @@ class GalleryPlusPlusShortcode extends Shortcode
             $draggable = $shortcode->getParameter('draggable', $pluginConfig['lightbox']['draggable']);
             $descEnabled = $shortcode->getParameter('descEnabled', $pluginConfig['lightbox']['descEnabled']);
             $descPosition = $shortcode->getParameter('descPosition', $pluginConfig['lightbox']['descPosition']);
+            $descMoreText = $shortcode->getParameter('descMoreText', $pluginConfig['lightbox']['descMoreText']);
+            $descMoreLength = $shortcode->getParameter('descMoreLength', $pluginConfig['lightbox']['descMoreLength']);
 
             // find all images, that a gallery contains
             $content = $shortcode->getContent();
@@ -143,6 +145,8 @@ class GalleryPlusPlusShortcode extends Shortcode
                 'draggable' => $draggable,
                 'descEnabled' => $descEnabled,
                 'descPosition' => $descPosition,
+                'descMoreText' => $descMoreText,
+                'descMoreLength' => $descMoreLength,
                 // images
                 'images' => $images_final,
             ]);

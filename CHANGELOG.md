@@ -1,3 +1,9 @@
+# v1.4.0
+##  05/05/2022
+
+1. [](#new)
+    * Option configure "See more" text and text length until "See more appears" for the lightbox.
+
 # v1.3.0
 ##  05/04/2022
 

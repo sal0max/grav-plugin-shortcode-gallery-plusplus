@@ -63,3 +63,10 @@ en:
 
     DEFAULT_DESC_POSITION: "Description position"
     DEFAULT_DESC_POSITION_HELP: "Position for slides description."
+
+    DEFAULT_DESC_MORE_TEXT: 'Description: "See more" text'
+    DEFAULT_DESC_MORE_TEXT_HELP: "The text which indicates there is more description text. Used on small layout (mobile devices)."
+
+    DEFAULT_DESC_MORE_LENGTH: 'Description: Characters until "See more"'
+    DEFAULT_DESC_MORE_LENGTH_HELP: "Number of characters to display on the description before adding the 'See more' link. If set to 0 it will display the entire description."
+    

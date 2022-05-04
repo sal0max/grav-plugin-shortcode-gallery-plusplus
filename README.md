@@ -67,6 +67,8 @@ Just have a look for yourself:
 | `draggable`           | `true`, `false` | Enable or disable mouse drag to go to previous and next slide.
 | `descEnabled`         | `true`, `false` | **For description, the title-text of an image is used: `![](image.jpg "description")`**
 | `descPosition`        | `bottom`, `top`, `left`, `right` | The position for slides description.
+| `descMoreText`        | text            | Description: "See more" text.
+| `descMoreLength`      | number          | Description: Characters until "See more". Will display the entire description, if set to `0`.
 
 
 ---

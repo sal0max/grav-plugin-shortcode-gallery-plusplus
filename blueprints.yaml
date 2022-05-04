@@ -1,7 +1,7 @@
 name: Shortcode Gallery++
 slug: shortcode-gallery-plusplus
 type: plugin
-version: 1.3.0
+version: 1.4.0
 description: A Shortcode extension to add sweet galleries with a lightbox to your Grav website.
 icon: code
 author:
@@ -191,4 +191,16 @@ form:
             "top": "top"
             "left": "left"
             "right": "right"
+          size: small
+        lightbox.descMoreText:
+          label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DESC_MORE_TEXT
+          help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DESC_MORE_TEXT_HELP
+          type: text
+          size: small
+        lightbox.descMoreLength:
+          label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DESC_MORE_LENGTH
+          help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_DESC_MORE_LENGTH_HELP
+          type: number
+          validate:
+            min: 0
           size: small
