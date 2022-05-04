@@ -1,3 +1,11 @@
+# v1.3.0
+##  05/04/2022
+
+1. [](#new)
+    * Option to disable thumbnails on RSS, Atom and JSON feeds from the Feed plugin
+2. [](#improved)
+    * Updated GLightbox to [3.2.0](https://github.com/biati-digital/glightbox/releases/tag/3.2.0)
+
 # v1.2.1
 ##  09/17/2021
 
