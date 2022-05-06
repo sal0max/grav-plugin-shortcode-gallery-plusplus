@@ -12,7 +12,7 @@ use Grav\Common\Page\Page;
  */
 class ShortcodeGalleryPlusPlusPlugin extends Plugin
 {
-    private ?Page $currentPage = null;
+    private $currentPage = null;
 
     /**
      * @return array

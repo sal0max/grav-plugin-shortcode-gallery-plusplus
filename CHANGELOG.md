@@ -1,3 +1,9 @@
+# v1.4.1
+##  05/06/2022
+
+1. [](#improved)
+    * Make this plugin compatible with older PHP versions.
+
 # v1.4.0
 ##  05/05/2022
 
