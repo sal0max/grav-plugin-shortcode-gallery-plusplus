@@ -15,7 +15,7 @@ docs: https://github.com/sal0max/grav-plugin-shortcode-gallery-plusplus/blob/mas
 license: MIT
 
 dependencies:
-  - { name: grav, version: '>=1.6.0' }
+  - { name: grav, version: '>=1.7.4' }
   - shortcode-core
 
 form:
