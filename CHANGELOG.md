@@ -1,3 +1,11 @@
+# v1.4.2
+##  05/25/2022
+
+1. [](#improved)
+    * Support for `loading` attributes on image thumbnails. To learn more, see
+      * https://learn.getgrav.org/17/advanced/grav-development/grav-17-upgrade-guide#media
+      * https://learn.getgrav.org/17/content/media#loading
+
 # v1.4.1
 ##  05/06/2022
 
