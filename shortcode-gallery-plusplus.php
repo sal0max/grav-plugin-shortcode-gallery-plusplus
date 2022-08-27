@@ -27,31 +27,11 @@ class ShortcodeGalleryPlusPlusPlugin extends Plugin
     public static function getSubscribedEvents(): array
     {
         return [
-            'onPluginsInitialized' => ['onPluginsInitialized', 0],
             'onShortcodeHandlers' => ['onShortcodeHandlers', 0],
             'onTwigTemplatePaths' => ['onTwigTemplatePaths', 0],
             'onPageContentRaw' => ['onPageContentRaw', 1000],             // before the Shortcode Core plugin
             'onPageContentProcessed' => ['onPageContentProcessed', 1000], // before the Shortcode Core plugin
         ];
-    }
-
-    public function onPluginsInitialized()
-    {
-        if ($this->isAdmin()) {
-            $this->active = false;
-            $this->enable([
-                'onGetPageBlueprints' => ['onGetPageBlueprints', 0]
-            ]);
-        }
-    }
-
-    /**
-     * Extend page blueprints with additional configuration options.
-     */
-    public function onGetPageBlueprints($event)
-    {
-        $types = $event->types;
-        $types->scanBlueprints('plugins://' . $this->name . '/blueprints');
     }
 
     /**

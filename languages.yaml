@@ -1,8 +1,6 @@
 en:
   PLUGIN_SHORTCODE_GALLERY_PLUSPLUS:
 
-    CACHE_ENABLE_DESCRIPTION: "If you are using the Feed plugin and have inserted a gallery from the Shortcode Gallery++ plugin into this page, you can disable the caching of its rendering in order to disable the gallery in your RSS, Atom and JSON feeds. This way, the images will be in your feeds in full resolution, and not as thumbnails like in your HTML page. If your page is static, you can also use the AdvancedPageCache plugin (which caches the entire HTML)."
-
     # Justified Gallery
     GALLERY_SETTINGS: "Gallery Settings"
 
