@@ -29,9 +29,12 @@
         {%- set estimated_thumb_width = ( original_image.width * rowHeight / original_image.height ) | round %}
         {#- generate thumbnails for DPR=2 and DPR=3 devices, DRP=1 devices will use the first one #}
         {#- RSS readers shouldn't use srcset images #}
+        {#- width and height to avoid Justified Gallery loading the image from "src" attribute #}
         {{ original_image
             .derivatives( [ estimated_thumb_width*2, estimated_thumb_width*3 ] )
             .sizes( "#{estimated_thumb_width}px")
+            .width()
+            .height()
             .loading.html(image.title, image.alt)|raw }}
         {#~ couldn't find the image inside grav, so just use the original url #}
         {%- else %}
@@ -50,6 +53,12 @@ $("#{{ id }}").justifiedGallery({
     lastRow: "{{  lastRow  }}",
     captions: {{  captions  }},
     border: {{  border  }},
+    {#~ use given width and height, don't load "src" attribute #}
+    waitThumbnailsLoad: false,
+    thumbnailPath: function (currentPath, width, height, image) {
+        {#~ don't try to reload image from "src" #}
+        return image.currentSrc;
+    },
 });
 
 GLightbox({
