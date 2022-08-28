@@ -33,8 +33,8 @@
         {{ original_image
             .derivatives( [ estimated_thumb_width*2, estimated_thumb_width*3 ] )
             .sizes( "#{estimated_thumb_width}px")
-            .width()
-            .height()
+            .width( estimated_thumb_width )
+            .height( rowHeight )
             .loading.html(image.title, image.alt)|raw }}
         {#~ couldn't find the image inside grav, so just use the original url #}
         {%- else %}
