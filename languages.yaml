@@ -1,8 +1,6 @@
 en:
   PLUGIN_SHORTCODE_GALLERY_PLUSPLUS:
 
-    CACHE_ENABLE_DESCRIPTION: "If you are using the Feed plugin and have inserted a gallery from the Shortcode Gallery++ plugin into this page, you can disable the caching of its rendering in order to disable the gallery in your RSS, Atom and JSON feeds. This way, the images will be in your feeds in full resolution, and not as thumbnails like in your HTML page. If your page is static, you can also use the AdvancedPageCache plugin (which caches the entire HTML)."
-
     # Justified Gallery
     GALLERY_SETTINGS: "Gallery Settings"
 
@@ -20,13 +18,6 @@ en:
 
     DEFAULT_BORDER: "Border size"
     DEFAULT_BORDER_HELP: "Decide the border size of the gallery. Use '-1' to set the border the same size as the margins."
-
-    DEFAULT_RESIZE_FACTOR: "Thumbnail size"
-    DEFAULT_RESIZE_FACTOR_HELP: "The height of the image thumbnails. Will be the row height multiplied by this value."
-    DEFAULT_RESIZE_FACTOR_1: "Row height × 1"
-    DEFAULT_RESIZE_FACTOR_1_5: "Row height × 1.5"
-    DEFAULT_RESIZE_FACTOR_2: "Row height × 2"
-    DEFAULT_RESIZE_FACTOR_2_5: "Row height × 2.5"
 
     # GLightbox
     LIGHTBOX_SETTINGS: "Lightbox Settings"
