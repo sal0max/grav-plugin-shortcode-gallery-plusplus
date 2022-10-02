@@ -7,7 +7,7 @@
     <a href="{{ image["src"] }}" class="glightbox-{{ id }}"
         {#- add description, if enabled #}
         {%- if descEnabled == "true" %}
-            {{- "" }} data-description="{{ image["title"]|raw }}"
+            {{- "" }} data-description="{{ image["desc"]|raw }}"
         {%- endif %}
 >
         {#~ try to generate a thumbnail image #}

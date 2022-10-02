@@ -77,6 +77,14 @@ form:
           validate:
             min: -1
           size: small
+        gallery.removeTitle:
+          label: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_REMOVE_TITLE
+          help: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.DEFAULT_REMOVE_TITLE_HELP
+          type: toggle
+          highlight: "false"
+          options:
+            "true": PLUGIN_ADMIN.ENABLED
+            "false": PLUGIN_ADMIN.DISABLED
     lightbox:
       type: section
       title: PLUGIN_SHORTCODE_GALLERY_PLUSPLUS.LIGHTBOX_SETTINGS

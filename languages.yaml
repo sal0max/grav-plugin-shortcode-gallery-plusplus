@@ -19,6 +19,9 @@ en:
     DEFAULT_BORDER: "Border size"
     DEFAULT_BORDER_HELP: "Decide the border size of the gallery. Use '-1' to set the border the same size as the margins."
 
+    DEFAULT_REMOVE_TITLE: "Remove title attribute"
+    DEFAULT_REMOVE_TITLE_HELP: "Remove the title attribute from images elements."
+
     # GLightbox
     LIGHTBOX_SETTINGS: "Lightbox Settings"
 
