@@ -31,7 +31,8 @@ class GalleryPlusPlusShortcode extends Shortcode
                 $feed_types[] = 'json';
 
             // check if the rendered page will be cached or not
-            $renderingCacheDisabled = isset($currentPage->header()->cache_enable)
+            $renderingCacheDisabled = !is_null($currentPage)
+                                      && isset($currentPage->header()->cache_enable)
                                       && !$currentPage->header()->cache_enable
                                       || !$this->grav['config']->get('system.cache.enabled');
 
