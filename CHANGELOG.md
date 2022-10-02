@@ -1,8 +1,18 @@
+# v1.5.0
+##  10/02/2022
+
+1. [](#new)
+   * New option to disable the `title` attribute on images.
+2. [](#bugfix)
+   * Fix a problem with Gantry.
+3. [](#improved)
+   * Better thumbnail generation.
+
 # v1.4.2
 ##  05/25/2022
 
 1. [](#improved)
-    * Support for `loading` attributes on image thumbnails. To learn more, see
+   * Support for `loading` attributes on image thumbnails. To learn more, see
       * https://learn.getgrav.org/17/advanced/grav-development/grav-17-upgrade-guide#media
       * https://learn.getgrav.org/17/content/media#loading
 
