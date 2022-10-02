@@ -115,39 +115,57 @@ class GalleryPlusPlusShortcode extends Shortcode
                     ]);
             }
 
+            // a random id for each gallery
+            $id = mt_rand();
+
+            // generate inline JS
+            $inline_js = $this->twig->processTemplate(
+                'partials/gallery-plusplus-inlinejs.js.twig', [
+                    'id' => $id,
+                    // gallery settings
+                    'rowHeight' => $rowHeight,
+                    'margins' => $margins,
+                    'lastRow' => $lastRow,
+                    'captions' => $captions,
+                    'border' => $border,
+                    // lightbox settings
+                    'openEffect' => $openEffect,
+                    'closeEffect' => $closeEffect,
+                    'slideEffect' => $slideEffect,
+                    'closeButton' => $closeButton,
+                    'touchNavigation' => $touchNavigation,
+                    'touchFollowAxis' => $touchFollowAxis,
+                    'keyboardNavigation' => $keyboardNavigation,
+                    'closeOnOutsideClick' => $closeOnOutsideClick,
+                    'loop' => $loop,
+                    'draggable' => $draggable,
+                    'descPosition' => $descPosition,
+                    'descMoreText' => $descMoreText,
+                    'descMoreLength' => $descMoreLength,
+                ]
+            );
+
             // give JS and CSS so that they can be cached
             $this->shortcode->addAssets('css', 'plugin://shortcode-gallery-plusplus/vendor/glightbox/glightbox.min.css');
             $this->shortcode->addAssets('css', 'plugin://shortcode-gallery-plusplus/vendor/justified-gallery/justifiedGallery.min.css');
             $this->shortcode->addAssets('js', ['jquery', 101]);
             $this->shortcode->addAssets('js', 'plugin://shortcode-gallery-plusplus/vendor/glightbox/glightbox.min.js');
             $this->shortcode->addAssets('js', 'plugin://shortcode-gallery-plusplus/vendor/justified-gallery/jquery.justifiedGallery.min.js');
+            $this->shortcode->addAssets('inlineJs', [ $inline_js, [ 'group' => 'bottom' ] ] );
 
-            return $this->twig->processTemplate('partials/gallery-plusplus.html.twig', [
-                'page' => $this->grav['page'], // used for image resizing
-                // gallery settings
-                'rowHeight' => $rowHeight,
-                'margins' => $margins,
-                'lastRow' => $lastRow,
-                'captions' => $captions,
-                'border' => $border,
-                // lightbox settings
-                'openEffect' => $openEffect,
-                'closeEffect' => $closeEffect,
-                'slideEffect' => $slideEffect,
-                'closeButton' => $closeButton,
-                'touchNavigation' => $touchNavigation,
-                'touchFollowAxis' => $touchFollowAxis,
-                'keyboardNavigation' => $keyboardNavigation,
-                'closeOnOutsideClick' => $closeOnOutsideClick,
-                'loop' => $loop,
-                'draggable' => $draggable,
-                'descEnabled' => $descEnabled,
-                'descPosition' => $descPosition,
-                'descMoreText' => $descMoreText,
-                'descMoreLength' => $descMoreLength,
-                // images
-                'images' => $images_final,
-            ]);
+            return $this->twig->processTemplate(
+                'partials/gallery-plusplus.html.twig',
+                [
+                    'page' => $this->grav['page'], // used for image resizing
+                    'id' => $id,
+                    // gallery settings
+                    'rowHeight' => $rowHeight,
+                    // lightbox settings
+                    'descEnabled' => $descEnabled,
+                    // images
+                    'images' => $images_final,
+                ]
+            );
         });
     }
 
