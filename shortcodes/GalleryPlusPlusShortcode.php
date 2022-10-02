@@ -52,6 +52,7 @@ class GalleryPlusPlusShortcode extends Shortcode
             $lastRow = $shortcode->getParameter('lastRow', $pluginConfig['gallery']['lastRow']);
             $captions = $shortcode->getParameter('captions', $pluginConfig['gallery']['captions']);
             $border = $shortcode->getParameter('border', $pluginConfig['gallery']['border']);
+            $removeTitle = $shortcode->getParameter('removeTitle', $pluginConfig['gallery']['removeTitle']);
 
             // overwrite default lightbox settings, if set by user
             $openEffect = $shortcode->getParameter('openEffect', $pluginConfig['lightbox']['openEffect']);
@@ -94,16 +95,21 @@ class GalleryPlusPlusShortcode extends Shortcode
                 // get title attribute - and strip html from it
                 // e.g.:    "<strong>Title 1</strong><br />Example 1<br/>More description<br>Bla bla"
                 // becomes: "Title 1 | Example 1 | More description | Bla bla"
-                preg_match('/title="(.*?)"/', $image, $titles);
-                if (!empty($titles)) {
-                    // replace br tags with " | "
-                    $title_clean = preg_replace('/<br *\/*>/', ' | ', html_entity_decode($titles[1]));
-                    // strip html
-                    $title_clean = strip_tags(html_entity_decode($title_clean));
-                    // set as new title
-                    $image = preg_replace('/title=".*?"/', "title=\"$title_clean\"", $image);
+                preg_match('/title="(.*?)"/', $image, $desc);
+                $title_clean = null;
+                if (!empty($desc)) {
+                    if (!filter_var($removeTitle, FILTER_VALIDATE_BOOLEAN)) {
+                        // replace br tags with " | "
+                        $title_clean = preg_replace('/<br *\/*>/', ' | ', html_entity_decode($desc[1]));
+                        // strip html
+                        $title_clean = strip_tags(html_entity_decode($title_clean));
+                        // set as new title
+                        $image = preg_replace('/title=".*?"/', "title=\"$title_clean\"", $image);
+                    } else {
+                        $image = preg_replace('/title=".*?" /', "", $image);
+                    }
                 } else {
-                    $titles[1] = null;
+                    $desc[1] = null;
                 }
 
                 // combine
@@ -112,7 +118,8 @@ class GalleryPlusPlusShortcode extends Shortcode
                     "image" => $image,
                     "src" => $links[1],
                     "alt" => $alts[1],
-                    "title" => $titles[1],
+                    "title" => $title_clean,
+                    "desc" => $desc[1],
                     ]);
             }
 
