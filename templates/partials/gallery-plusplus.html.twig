@@ -1,6 +1,3 @@
-{# a random id for each gallery #}
-{% set id = random() %}
-
 {# html #}
 <p id="{{ id }}">
     {%~ for image in images %}
@@ -44,36 +41,3 @@
     </a>
     {%~ endfor %}
 </p>
-
-{# add javascript for gallery and lightbox configuration #}
-<script>
-$("#{{ id }}").justifiedGallery({
-    rowHeight: {{  rowHeight  }},
-    margins: {{  margins  }},
-    lastRow: "{{  lastRow  }}",
-    captions: {{  captions  }},
-    border: {{  border  }},
-    {#~ use given width and height, don't load "src" attribute #}
-    waitThumbnailsLoad: false,
-    thumbnailPath: function (currentPath, width, height, image) {
-        {#~ don't try to reload image from "src" #}
-        return image.currentSrc;
-    },
-});
-
-GLightbox({
-    selector: ".glightbox-{{ id }}",
-    openEffect: "{{ openEffect }}",
-    closeEffect: "{{ closeEffect }}",
-    slideEffect: "{{ slideEffect }}",
-    closeButton: {{ closeButton }},
-    touchNavigation: {{ touchNavigation }},
-    touchFollowAxis: {{ touchFollowAxis }},
-    keyboardNavigation: {{ keyboardNavigation }},
-    closeOnOutsideClick: {{ closeOnOutsideClick }},
-    loop: {{ loop }},
-    draggable: {{ draggable }},
-    descPosition: "{{ descPosition }}",
-    moreText: "{{ descMoreText }}",
-    moreLength: {{ descMoreLength }},
-});</script>
