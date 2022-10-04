@@ -5,6 +5,7 @@ gallery:
   lastRow: nojustify
   captions: "false"
   border: 0
+  resizeFactor: 1.5
   removeTitle: "false"
 lightbox:
   openEffect: zoom

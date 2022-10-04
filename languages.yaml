@@ -19,6 +19,13 @@ en:
     DEFAULT_BORDER: "Border size"
     DEFAULT_BORDER_HELP: "Decide the border size of the gallery. Use '-1' to set the border the same size as the margins."
 
+    DEFAULT_RESIZE_FACTOR: "Thumbnail size"
+    DEFAULT_RESIZE_FACTOR_HELP: "The height of the image thumbnails. Will be the row height multiplied by this value."
+    DEFAULT_RESIZE_FACTOR_1: "Row height × 1"
+    DEFAULT_RESIZE_FACTOR_1_5: "Row height × 1.5"
+    DEFAULT_RESIZE_FACTOR_2: "Row height × 2"
+    DEFAULT_RESIZE_FACTOR_2_5: "Row height × 2.5"
+
     DEFAULT_REMOVE_TITLE: "Remove title attribute"
     DEFAULT_REMOVE_TITLE_HELP: "Remove the title attribute from images elements."
 
