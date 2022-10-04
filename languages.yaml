@@ -25,6 +25,7 @@ en:
     DEFAULT_RESIZE_FACTOR_1_5: "Row height × 1.5"
     DEFAULT_RESIZE_FACTOR_2: "Row height × 2"
     DEFAULT_RESIZE_FACTOR_2_5: "Row height × 2.5"
+    DEFAULT_RESIZE_FACTOR_3: "Row height × 3"
 
     DEFAULT_REMOVE_TITLE: "Remove title attribute"
     DEFAULT_REMOVE_TITLE_HELP: "Remove the title attribute from images elements."
