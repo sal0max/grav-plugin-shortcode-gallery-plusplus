@@ -50,6 +50,7 @@ Just have a look for yourself:
 | `lastRow`   | `justify`, `hide`, `nojustify`, `center`, `right` | `justify`: justifies the last row; `hide`: hides the row if it can't be justified; `nojustify`: align the last row to the left; `center`: align the last row to the center; `right`: align the last row to the right 
 | `captions`  | `true`, `false` | Enable captions that appear when the mouse hovers an image. **For caption, the alt-text of an image is used: `![caption](image.jpg)`** 
 | `border`    | dimension in pixel | The border size of the gallery. With a negative value the border will be the same as `margins`.
+| `resizeFactor` | `1`, `1.5`, `2`, `2.5`, `3` | The pixel density of the thumbnails. `1` is maybe a little bit low, since high pixel density screens have become more popular. `2` is a good compromise between the weight of the thumbnails when loading the page, and their quality. `3` displays great quality thumbnails on any device.
 | `removeTitle` | `true`, `false` | Remove the `title` attribute from `<img>` elements in the gallery. Is interesting when you have long descriptions.
 
 ## Lightbox settings

@@ -52,6 +52,7 @@ class GalleryPlusPlusShortcode extends Shortcode
             $lastRow = $shortcode->getParameter('lastRow', $pluginConfig['gallery']['lastRow']);
             $captions = $shortcode->getParameter('captions', $pluginConfig['gallery']['captions']);
             $border = $shortcode->getParameter('border', $pluginConfig['gallery']['border']);
+            $resizeFactor = $shortcode->getParameter('resizeFactor', $pluginConfig['gallery']['resizeFactor']);
             $removeTitle = $shortcode->getParameter('removeTitle', $pluginConfig['gallery']['removeTitle']);
 
             // overwrite default lightbox settings, if set by user
@@ -168,6 +169,7 @@ class GalleryPlusPlusShortcode extends Shortcode
                     'id' => $id,
                     // gallery settings
                     'rowHeight' => $rowHeight,
+                    'resizeFactor' => $resizeFactor,
                     // lightbox settings
                     'descEnabled' => $descEnabled,
                     // images
