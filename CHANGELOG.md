@@ -1,3 +1,11 @@
+# v1.6.0
+##  04/18/2023
+
+1. [](#new)
+   * New option: configure the thumbnail size.
+2. [](#improved)
+   * Further improvements on thumbnail generation.
+
 # v1.5.0
 ##  10/02/2022
 
